@@ -16,10 +16,10 @@ public class BasicController {
     private final ObjectMapper objectMapper;
 
     @GetMapping("/hello")
-    public String hello() throws JsonProcessingException {
+    public CustomMessage hello() throws JsonProcessingException {
         CustomMessage customMessage = new CustomMessage();
         customMessage.setMessage("hello");
-        return objectMapper.writeValueAsString(customMessage);
+        return customMessage;
     }
 
 }
