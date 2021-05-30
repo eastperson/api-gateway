@@ -3,10 +3,9 @@ package com.seminar.api.web.rest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.seminar.api.model.CustomMessage;
+import com.seminar.api.model.Search;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/")
 @RestController
@@ -20,6 +19,12 @@ public class BasicController {
         CustomMessage customMessage = new CustomMessage();
         customMessage.setMessage("hello");
         return customMessage;
+    }
+
+    @PostMapping("/search")
+    public Search search(@RequestBody Search search){
+
+        return search;
     }
 
 }
